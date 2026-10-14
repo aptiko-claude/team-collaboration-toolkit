@@ -166,3 +166,13 @@ Parameters
 
    Both default to ``synapse``. The database uses UTF-8 encoding and ``C``
    collation, as required by Synapse.
+
+.. data:: synapse_mas_enabled
+
+   When ``true`` (the default), it delegates authentication to a local
+   :doc:`mas` instance (Synapse >= 1.136.0 required). Set the same
+   ``mas_synapse_secret`` for both roles. The reverse proxy forwards
+   login, logout and refresh requests to MAS on localhost port 8080.
+
+   Set to ``false`` to use Synapse's built-in authentication. This is not
+   recommended and it might not be well tested.
